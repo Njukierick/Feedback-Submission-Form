@@ -1,0 +1,80 @@
+<div id="container">
+  <div class="error" [class.hidden]="errorMsg.length == 0">
+    <p>{{ errorMsg }}</p>
+    <span (click)="closeError()" class="close">✖︎</span>
+  </div>
+  <h1>Feedback Form</h1>
+  <hr />
+  <p>We’d like your feedback to improve our website.</p>
+  <form [formGroup]="feedbackForm" name="feedbackForm" (ngSubmit)="onSubmit()">
+    <div id="options">
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="suggestion"
+          name="type"
+          value="suggestion"
+        />
+        <label for="suggestion">Suggestion</label><br />
+      </p>
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="comment"
+          name="type"
+          value="comment"
+        />
+        <label for="comment">Comment</label><br />
+      </p>
+      <p class="radioOption">
+        <input
+          formControlName="type"
+          type="radio"
+          id="question"
+          name="type"
+          value="question"
+        />
+        <label for="question">Question</label><br />
+      </p>
+    </div>
+    <div class="inputContainer">
+      <label>Description:</label>
+      <textarea rows="6" formControlName="description"></textarea>
+    </div>
+    <div class="inputContainer">
+      <div id="ratingLabel">
+        <label>How would you rate our site?</label>
+        <label id="ratingValue">{{ feedbackForm.value?.rating }}</label>
+      </div>
+      <input formControlName="rating" type="range" name="rating" max="5" />
+    </div>
+    <div class="inputContainer">
+      <label>Name:</label>
+      <div class="nameInput">
+        <input
+          formControlName="firstName"
+          type="text"
+          name="firstName"
+          placeholder="First"
+        />
+        <input
+          formControlName="lastName"
+          type="text"
+          name="lastName"
+          placeholder="Last"
+        />
+      </div>
+    </div>
+    <div class="inputContainer">
+      <label>Email:</label>
+      <input formControlName="email" type="email" name="email" />
+    </div>
+    <div class="inputContainer">
+      <button type="submit" [disabled]="feedbackForm.invalid">
+        Submit Feedback
+      </button>
+    </div>
+  </form>
+</div>

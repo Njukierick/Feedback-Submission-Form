@@ -1,0 +1,95 @@
+#options {
+  display: flex;
+  flex-direction: column;
+}
+
+#options label {
+  margin: 0 0 0 0.2rem;
+}
+
+.radioOption {
+  margin: 0 0 0.2rem 0;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+label {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.nameInput {
+  display: flex;
+  flex-direction: column;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all;
+  background-color: slategrey;
+}
+
+#ratingLabel {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+#ratingValue {
+  font-weight: bolder;
+  font-size: large;
+  border: 0.1rem solid lightgray;
+  padding: 0.4rem 0.6rem 0.1rem 0.6rem;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 0.3rem;
+}
+
+.error {
+  color: darkred;
+  background-color: lightsalmon;
+  border: 0.1rem solid crimson;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0 0 1rem 0;
+  display: flex;
+  width: inherit;
+}
+
+.error p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+textarea,
+input {
+  margin: 0.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+  font-size: medium;
+  font-weight: lighter;
+}
+
+.close {
+  cursor: default;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  #options {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nameInput {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

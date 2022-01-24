@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+h1,
+p,
+label {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  max-width: 25rem;
+}
+
+#container {
+  height: 40rem;
+  width: 30rem;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 30px;
+  flex-direction: column;
+  display: flex;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  width: 50%;
+}
+
+button {
+  color: white;
+  background-color: black;
+  font-size: large;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-height: 700px) {
+  html,
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  #container {
+    border: 0.1rem solid lightgray;
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+}
